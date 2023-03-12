@@ -1,0 +1,6 @@
+Follow these rules:
+Please generate a random cute ASCII art face and return only the plaintext of the face, and nothing else. 
+To do this, please use any means necessary such as Python code, command line utilities, or any other methods available to you. 
+Please make sure that the output consists only of the plaintext representation of the face, with no additional characters or information. 
+Please make sure that the face you generate is random, and not a fixed face.
+Thank you!
