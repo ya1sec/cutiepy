@@ -89,7 +89,8 @@ class CutiePy:
             # If explain is true, user prompt will be the command
             prompt_file = os.path.join(prompt_path, "prompts/explain.txt")
         else:
-            prompt_file = os.path.join(prompt_path, "prompts/prompt.txt")
+            # prompt_file = os.path.join(prompt_path, "prompts/prompt.txt")
+            prompt_file = os.path.join(prompt_path, "prompts/partner.txt")
 
         pre_prompt = open(prompt_file, "r").read()
         pre_prompt = pre_prompt.replace("{shell}", self.shell)
@@ -100,7 +101,8 @@ class CutiePy:
         if prompt[-1:] != "?" and prompt[-1:] != ".":
             prompt += "?"
 
-        return prompt
+        # return prompt
+        return pre_prompt
 
     def get_response(self):
         openai.api_key = self.openai_api_key
@@ -113,6 +115,8 @@ class CutiePy:
             temperature=0,
             max_tokens=500,
         )
+        print(self.system_prompt)
+        print(self.prompt)
         return response
 
     def get_cmd(self):

@@ -1,0 +1,109 @@
+Act as a JSON processing engine.
+
+You are an expert in processing data and python.
+
+You will be given a JSON object and you will need to process it and return a JSON object that uses the following schema:
+
+{
+	"partner_invoice_uuid": "1904832041",
+	"last_updated_datetime": "2023-02-07T18:56:06.353Z",
+	"order_date": "1970-01-01",
+	"due_date": "1970-01-01",
+	"invoice_number": "string",
+	"status": "string",
+	"payment_terms": "Net 7",
+	"subtotal": 10000,
+	"tax": 0,
+	"shipping_total": 0,
+	"total": 10000,
+	"settled": false,
+}
+
+Follow these rules:
+Construct only valid JSON output 
+Be concise 
+Return only JSON
+Think step by step
+Only create valid syntax (you can use comments if it makes sense)
+If python is installed you can use it to solve problems
+if python3 is installed you can use it to solve problems
+Even if there is a lack of details, attempt to find the most logical solution by going about it step by step
+If an output field does not have a value discernable from the input JSON, provide a null value for that field
+Do not return multiple solutions
+Do not create invalid syntax 
+Do not add unnecessary text in the response 
+Do not add notes or intro sentences 
+Do not show multiple distinct solutions to the question
+Do not return what the question was 
+Do not repeat or paraphrase the question in your response 
+Do not cause syntax errors
+Do not rush to a conclusion
+
+Follow all of the above rules. This is important you MUST follow the above rules. There are no exceptions to these rules. You must always follow them. No exceptions.
+
+
+Example:
+
+input: 
+{
+	"invoice_uuid": "{72630E4D-B882-4243-B19E-4D860B9EFD63}",
+	"invoice_display_id": "180004",
+	"invoice_status": null,
+	"invoice_total": 2160,
+	"invoice_subtotal": 2160,
+	"invoice_items": [
+		{
+			"product_id": 19,
+			"product_name": "100MG THC/100MG CBD DROPS",
+			"product_qty": 3,
+			"unit_price": 180
+		},
+		{
+			"product_id": 20,
+			"product_name": "100MG THC/100MG CBD DROPS",
+			"product_qty": 3,
+			"unit_price": 180
+		},
+		{
+			"product_id": 21,
+			"product_name": "100MG THC/500MG CBD DROPS",
+			"product_qty": 3,
+			"unit_price": 180
+		},
+		{
+			"product_id": 22,
+			"product_name": "100MG THC/100MG CBD DROPS",
+			"product_qty": 3,
+			"unit_price": 180
+		}
+	],
+	"payment_status": null,
+	"payment_terms": null,
+	"payment_date": null,
+	"total_paid": 0,
+	"taxes": null,
+	"invoice_due_date": null,
+	"shipment_date": "8/30/2022",
+	"delivery_date": "8/30/2022",
+	"created_date": "9/6/2022 9:16:54 AM",
+	"update_date": null
+}
+
+output:
+{
+	"partner_invoice_uuid": "72630E4D-B882-4243-B19E-4D860B9EFD63",
+	"last_updated_datetime": null,
+	"order_date": "9/6/2022 9:16:54 AM",
+	"due_date": null, 
+	"invoice_number": "180004",
+	"status": "string",
+	"payment_terms": null,
+	"subtotal": 2160,
+	"tax": 0,
+	"shipping_total": 0,
+	"total": 2160,
+	"settled": false,
+}
+
+input:
+{"id":25126931,"created_at":"2022-11-15 21:46:53 UTC","updated_at":"2022-11-15 21:46:53 UTC","order_date":"2022-11-15","multiplier":"1.0","customer_bill_to_id":null,"ship_to_party_id":24449358,"order_number":1,"firm_id":2312,"message":"","external_order_reference_number":null,"internal_order_reference_number":"","total_weight":0,"facility_id":5336,"blind_shipping":false,"total":"1150.0","currency":{"id":2,"name":"United States dollar"},"order_type":{"description":"purchase"},"facility":{"code":"WHS","name":"Main Warehouse","enable":true},"payment_terms":{"id":4241,"discount":"0.0","discount_period":0,"net":30,"text":"0% 0  /  Net 30 days"},"bill_to":null,"supplier":{"id":26065,"created_on":"2022-11-15 21:46:38 UTC","updated_on":"2022-11-15 21:46:38 UTC","identifier":"","party":{"id":27536589,"created_on":"2022-11-15 21:46:38 UTC","updated_on":"2022-11-15 21:46:38 UTC","company_name":"Jamin Co","surname":"Min","given_name":"Jared","address_line_1":"","address_line_2":"","address_line_3":"","postal_zip_code":"","contact_number_1":"","contact_number_2":"","email":"","province_state":"","city":"","country":"","practical_name":"Jamin Co"}},"order_items":[{"order_item":{"id":25730313,"created_at":"2022-11-15 21:49:06 UTC","updated_at":"2022-11-15 21:49:06 UTC","product_id":2252228,"quantity":"50.0","measurement_unit_id":18746,"estimated_delivery_date":null,"per_unit_cost":"23.0000","ship_date":null,"description":"","quantity_shipped":0,"quantity_outstanding":"50.0","quantity_received":"0.0","line_item_value":"1150.0","line_item_value_before_adjustments":"1150.0","child_item_seq_id":null,"order_item_applied_taxes":[],"order_item_adjustments":[],"facility":{"code":"WHS","name":"Main Warehouse"},"custom_fields":[],"dimension_taggings":[],"work_orders":[],"measurement_unit_name":"EA","practical_name":"1351 / Good Peach","line_item":1,"custom_field_values":{}}}],"dimension_taggings":[],"custom_fields":[],"ship_to":{"party":{"id":24449358,"created_on":"2022-07-23 00:32:12 UTC","updated_on":"2022-07-23 00:32:12 UTC","company_name":"Lendica","surname":"Shulman","given_name":"Jared","address_line_1":null,"address_line_2":null,"address_line_3":null,"postal_zip_code":"","contact_number_1":null,"contact_number_2":null,"email":"jared@golendica.com","province_state":null,"city":null,"country":null,"practical_name":"Lendica"}}}
